@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171714" />
+  <meta name="description" content="Big, bold biryani, sizzling grills, and comfort-food classics. Order your favorites from Ember & Spice." />
+  <title>Ember & Spice — The good stuff, grilled</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">GOOD FOOD. GOOD MOOD. <span>Free delivery on orders over ₹799</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Ember and Spice home"><span class="brand-mark">E<span>&</span>S</span><span class="brand-name">EMBER <i>&</i> SPICE<small>FIRE-CRISPED · ALWAYS FRESH</small></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#menu">Our menu</a><a href="#story">Our story</a><a href="#reviews">Good words</a></nav>
+    <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping cart">Your bag <span id="cart-count">0</span></button>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow"><span class="live-dot"></span> FRESH OFF THE FIRE</span><h1>The good stuff,<br /><em>grilled.</em></h1><p>Big, bold flavors. Slow-cooked classics. A little heat, a lot of heart.</p><a class="button button-primary" href="#menu">Find your feast <span aria-hidden="true">↗</span></a><div class="hero-note"><span class="stars">★★★★★</span> <strong>4.9/5</strong> from people who know good food</div></div>
+      <div class="hero-image" role="img" aria-label="A sizzling spread of grilled chicken and flavorful sides"><div class="image-tag"><span>MADE WITH FIRE</span><strong>Never with shortcuts.</strong></div><div class="hero-stamp">REAL<br />FOOD<br /><span>✳</span></div></div>
+      <div class="hero-bottom"><span>01 — MADE FRESH, EVERY ORDER</span><span>SCROLL FOR THE GOOD STUFF ↓</span></div>
+    </section>
+    <section class="menu-section section-wrap" id="menu">
+      <div class="section-heading"><div><span class="eyebrow">A MENU WITH A LITTLE FIRE</span><h2>Meet your <em>new favorite.</em></h2></div><p>Marinated overnight. Cooked to order.<br />Gone before you know it.</p></div>
+      <div class="category-tabs" role="group" aria-label="Filter menu by category"><button class="category-tab active" data-category="all" type="button">All the good stuff</button><button class="category-tab" data-category="biryani" type="button">Biryani</button><button class="category-tab" data-category="grill" type="button">From the grill</button><button class="category-tab" data-category="mains" type="button">Comfort food</button></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+    <section class="story-section" id="story"><div class="story-image" role="img" aria-label="A chef tending to a hot grill"></div><div class="story-copy"><span class="eyebrow">A LITTLE FIRE GOES A LONG WAY</span><h2>Good food takes<br /><em>the long way.</em></h2><p>We believe the best meals start with real ingredients, a proper marinade, and the patience to let the fire do its thing. No fuss. No shortcuts. Just food worth gathering for.</p><a href="#menu" class="text-link">Come hungry <span aria-hidden="true">→</span></a><div class="story-number">02 / 03</div></div></section>
+    <section class="quote-section" id="reviews"><span class="eyebrow">DON'T JUST TAKE OUR WORD FOR IT</span><p class="quote-stars">★★★★★</p><blockquote>“The kind of biryani you think about<br class="desktop-only" /> on the way home.”</blockquote><span class="quote-credit">— A VERY HAPPY REGULAR</span></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">E<span>&</span>S</span><span class="brand-name">EMBER <i>&</i> SPICE<small>FIRE-CRISPED · ALWAYS FRESH</small></span></a><p>Made with a little fire and a lot of heart.</p><span>© <span id="year"></span> Ember & Spice. All good things reserved.</span></footer>
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title" aria-hidden="true"><div class="cart-heading"><div><span class="eyebrow">YOUR EVENING, SORTED</span><h2 id="cart-title">Your bag <span id="cart-heading-count">(0)</span></h2></div><button class="icon-button" id="close-cart" aria-label="Close shopping bag" type="button">✕</button></div><div class="cart-items" id="cart-items"></div><div class="cart-empty" id="cart-empty"><span>✳</span><h3>Something's missing.</h3><p>Your next favorite is just a scroll away.</p><button class="text-link" id="browse-menu" type="button">Explore the menu →</button></div><div class="cart-footer" id="cart-footer" hidden><div class="subtotal-row"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div><p>Delivery and taxes calculated at checkout.</p><button class="button button-primary checkout-button" id="checkout-button" type="button">Let's check out <span aria-hidden="true">→</span></button><span class="demo-note">Demo checkout · no payment will be collected</span></div></aside>
+  <dialog class="checkout-dialog" id="checkout-dialog"><form id="checkout-form"><div class="dialog-heading"><div><span class="eyebrow">ONE LAST THING</span><h2>Where should we<br /><em>send the good stuff?</em></h2></div><button class="icon-button" id="close-checkout" aria-label="Close checkout" type="button">✕</button></div><label>Your name<input name="name" autocomplete="name" required maxlength="80" placeholder="Name on the order" /></label><label>Delivery address<textarea name="address" autocomplete="street-address" required maxlength="300" rows="3" placeholder="House number, street, area"></textarea></label><label>Phone number<input name="phone" type="tel" autocomplete="tel" required maxlength="20" placeholder="Best number to reach you" /></label><div class="checkout-total"><span>Order total</span><strong id="checkout-total">₹0</strong></div><button class="button button-primary checkout-button" type="submit">Place demo order <span aria-hidden="true">→</span></button><p class="demo-note">This is a demo store. This form does not send an order or process payment.</p></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
